@@ -1,0 +1,3 @@
+/media/dima/3C54624D54620A4A/CLion/Projects/HomeWorks/FirstWork/4thEcsersice/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/dima/3C54624D54620A4A/CLion/Projects/HomeWorks/FirstWork/4thEcsersice/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/dima/3C54624D54620A4A/CLion/Projects/HomeWorks/FirstWork/4thEcsersice/cmake-build-debug/CMakeFiles/4thEcsersice.dir
