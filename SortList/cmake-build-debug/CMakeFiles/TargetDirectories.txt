@@ -1,0 +1,3 @@
+/home/dima/CLionProjects/SortList/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dima/CLionProjects/SortList/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dima/CLionProjects/SortList/cmake-build-debug/CMakeFiles/SortList.dir
