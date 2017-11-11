@@ -69,12 +69,13 @@ void printList(Node *pBeign)
 
 void sortList (Node **pBegin)
 {
-    Node *pV = *pBegin;
+    Node *pV = new Node;
     int a;
 
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i <= n; i++)
     {
-        for (int j = i; j <= n-1; j++)
+        pV = *pBegin;
+        for (int j = 1; j <= n-i; j++)
         {
             if ((pV -> digit) > ((pV -> next) -> digit))
             {

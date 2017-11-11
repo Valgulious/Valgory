@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/dima/CLionProjects/SortList/main.cpp
+/home/dima/Valgory/SortList/main.cpp
 iostream
+-
+ctime
 -
 
