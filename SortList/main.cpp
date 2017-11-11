@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -14,18 +15,19 @@ struct Node
 Node * primaryInitialization ();
 void addToEnd (Node **pBegin);
 void printList(Node *pBegin);
-void sortList (Node *pBegin);
+void sortList (Node **pBegin);
 
 
 int main() {
     srand(time(NULL));
-    setlocale(LC_ALL, "rus");
     Node *pBegin = primaryInitialization();
 
-    for (int i = 1; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
         addToEnd(&pBegin);
     }
+    printList(pBegin);
+    sortList(&pBegin);
     printList(pBegin);
     return 0;
 }
@@ -62,5 +64,26 @@ void printList(Node *pBeign)
         pV = pV ->next;
     }
     cout << endl;
+
+}
+
+void sortList (Node **pBegin)
+{
+    Node *pV = *pBegin;
+    int a;
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i; j <= n-1; j++)
+        {
+            if ((pV -> digit) > ((pV -> next) -> digit))
+            {
+                a = pV -> digit;
+                pV -> digit = (pV -> next) -> digit;
+                (pV -> next) -> digit = a;
+            }
+            pV = pV -> next;
+        }
+    }
 
 }
