@@ -1,4 +1,4 @@
-/home/dima/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dima/Valgory/ClassWorks/15.11.17/Ex_1
+/home/dima/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dima/Valgory/ClassWorks/15.11.17/createTree
 -- The C compiler identification is GNU 5.4.0
 -- The CXX compiler identification is GNU 5.4.0
 -- Check for working C compiler: /usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/dima/Valgory/ClassWorks/15.11.17/Ex_1/cmake-build-debug
+-- Build files have been written to: /home/dima/Valgory/ClassWorks/15.11.17/createTree/cmake-build-debug
