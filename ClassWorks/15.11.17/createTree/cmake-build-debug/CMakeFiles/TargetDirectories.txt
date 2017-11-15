@@ -1,0 +1,3 @@
+/home/dima/Valgory/ClassWorks/15.11.17/Ex_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dima/Valgory/ClassWorks/15.11.17/Ex_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dima/Valgory/ClassWorks/15.11.17/Ex_1/cmake-build-debug/CMakeFiles/Ex_1.dir
