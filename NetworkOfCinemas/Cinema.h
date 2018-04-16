@@ -13,18 +13,20 @@ class Cinema {
 public:
 
     string name;
-    CinemaHall cinemaHalls[];
-    Session sessions[];
+//    CinemaHall cinemaHalls[];
+//    Session sessions[];
+    CinemaHall ** cinemaHalls = nullptr;
+    Session ** sessions = nullptr;
     NetworkOfCinemas networkOfCinemas;
 
     Cinema(string, NetworkOfCinemas);
     void setName(string);
     string getName();
-    void addCinemaHall(CinemaHall);
-    CinemaHall getCinemaHalls();
+    void addCinemaHall(CinemaHall*);
+    CinemaHall ** getCinemaHalls();
     void removeCinemaHall(CinemaHall);
-    void addSession(Session);
-    Session getSessions();
+    void addSession(Session*);
+    Session ** getSessions();
     void removeSession(Session);
     void setNetworkOfCinemas(NetworkOfCinemas);
     NetworkOfCinemas getNetworkOfCinemas();

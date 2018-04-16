@@ -16,3 +16,30 @@ string Film::getName() {
 void Film::setDuration(int newDuration) {
     duration = newDuration;
 }
+
+int Film::getDuration()
+{
+    return duration;
+}
+
+void Film::addSession(Session * session)
+{
+    if (!this->sessions) {
+        Session ** mySessions = new Session*[1];
+        mySessions[0] = session;
+        this->sessions = mySessions;
+    } else {
+        Session ** mySessions = new Session*[sizeof(this->sessions) + 1];
+        for (int i = 0; i < sizeof(this->sessions); i++) {
+            mySessions[i] = this->sessions[i];
+        }
+        mySessions[sizeof(this->sessions) + 1] = session;
+        delete [] this->sessions;
+        this->sessions = mySessions;
+    }
+}
+
+Session** Film::getSession()
+{
+    return this->sessions;
+}

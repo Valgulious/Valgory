@@ -13,15 +13,16 @@ class CinemaHall {
 public:
 
     string name;
-    Seat seats[];
+//    Seat seats[];
+    Seat ** seats = nullptr;
     bool is3D;
     Cinema cinema;
 
     CinemaHall(string, bool, Cinema);
     void setName(string);
     string getName();
-    Seat getSeats();
-    void addSeats(Seat);
+    Seat ** getSeats();
+    void addSeats(Seat*);
     void removeSeat(Seat);
     void set3D(bool);
     bool get3D();

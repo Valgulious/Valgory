@@ -1,6 +1,7 @@
 #ifndef NETWORKOFCINEMAS_NETWORKOFCINEMAS_H
 #define NETWORKOFCINEMAS_NETWORKOFCINEMAS_H
-#include "iostream"
+#include <iostream>
+#include <vector>
 #include "Cinema.h"
 
 
@@ -11,14 +12,15 @@ class NetworkOfCinemas {
 public:
 
     string name;
-    Cinema cinemas [];
+    Cinema ** cinemas = nullptr;
+    //Cinema cinemas [];
 
     NetworkOfCinemas(string);
     void setName(string);
     string getName();
-    void addCinema(Cinema);
+    void addCinema(Cinema *);
     void removeCinema(Cinema);
-    Cinema getCinemas();
+    Cinema ** getCinemas();
 };
 
 

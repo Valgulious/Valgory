@@ -12,15 +12,15 @@ public:
 
     string name;
     int duration;
-    Session session[];
-
+//    Session session[];
+    Session ** sessions = nullptr;
     Film(string, int, Session);
     void setName(string);
     string getName();
     void setDuration(int);
     int getDuration();
-    void addSession(Session);
-    Session getSession();
+    void addSession(Session*);
+    Session** getSession();
     void removeSession(Session);
 };
 

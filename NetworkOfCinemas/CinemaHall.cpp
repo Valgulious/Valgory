@@ -29,3 +29,25 @@ void CinemaHall::setCinema(Cinema newCinema) {
 Cinema CinemaHall::getCinema() {
     return cinema;
 }
+
+void CinemaHall::addSeats(Seat* newSeat)
+{
+    if (!this->seats) {
+        Seat ** mySeats = new Seat*[1];
+        mySeats[0] = newSeat;
+        this->seats = mySeats;
+    } else {
+        Seat ** mySeats = new Seat*[sizeof(this->seats) + 1];
+        for (int i = 0; i < sizeof(this->seats); i++) {
+            mySeats[i] = this->seats[i];
+        }
+        mySeats[sizeof(this->seats) + 1] = newSeat;
+        delete [] this->seats;
+        this->seats = mySeats;
+    }
+}
+
+Seat** CinemaHall::getSeats()
+{
+    return this->seats;
+}
