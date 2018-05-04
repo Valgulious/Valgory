@@ -2,33 +2,39 @@
 
 using namespace std;
 
-class Male
+//class Male
+//{
+//public:
+//    virtual void info() = 0;
+//    virtual ~Male() {}
+//};
+//
+//class Female
+//{
+//public:
+//    virtual void info() = 0;
+//    virtual ~Female() {}
+//};
+
+class Gender
 {
-public:
-    virtual void info() = 0;
-    virtual ~Male() {}
+    virtual void genderInfo() = 0;
+    virtual ~Gender() {}
 };
 
-class Female
+class MalePerson: public Gender
 {
 public:
-    virtual void info() = 0;
-    virtual ~Female() {}
-};
-
-class MalePerson: public Male
-{
-public:
-    void info()
+    void genderInfo()
     {
         cout << "Gender - Male" << endl;
     }
 };
 
-class FemalePerson: public Female
+class FemalePerson: public Gender
 {
 public:
-    void info()
+    void GenderInfo()
     {
         cout << "Gender - Female" << endl;
     }
@@ -36,11 +42,11 @@ public:
 
 class PersonFactory {
 public:
-   Male* createMale()
+   Gender* createMalePerson()
    {
        return new MalePerson;
    }
-    virtual Female* createFemale()
+    virtual Gender* createFemalePerson()
     {
         return new FemalePerson;
     }
