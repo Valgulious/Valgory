@@ -23,7 +23,7 @@ public:
     string getName();
     Seat ** getSeats();
     void addSeats(Seat*);
-    void removeSeat(Seat);
+    void removeSeat(Seat*);
     void set3D(bool);
     bool get3D();
     void setCinema(Cinema);

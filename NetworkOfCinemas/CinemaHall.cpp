@@ -51,3 +51,19 @@ Seat** CinemaHall::getSeats()
 {
     return this->seats;
 }
+
+void CinemaHall::removeSeat(Seat * seat)
+{
+    if (!this->seats) {
+        Seat ** mySeats = new Seat*[sizeof(this->seats) - 1];
+        int j(0);
+        for (int i = 0; i < sizeof(this->seats); i++) {
+            if (this->seats[i] != seat) {
+                mySeats[j] = this->seats[i];
+                j++;
+            }
+        }
+        delete [] this->seats;
+        this->seats = mySeats;
+    }
+}

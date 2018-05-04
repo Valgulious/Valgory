@@ -24,10 +24,10 @@ public:
     string getName();
     void addCinemaHall(CinemaHall*);
     CinemaHall ** getCinemaHalls();
-    void removeCinemaHall(CinemaHall);
+    void removeCinemaHall(CinemaHall*);
     void addSession(Session*);
     Session ** getSessions();
-    void removeSession(Session);
+    void removeSession(Session*);
     void setNetworkOfCinemas(NetworkOfCinemas);
     NetworkOfCinemas getNetworkOfCinemas();
 };

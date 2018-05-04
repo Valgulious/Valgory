@@ -21,7 +21,7 @@ public:
     int getDuration();
     void addSession(Session*);
     Session** getSession();
-    void removeSession(Session);
+    void removeSession(Session*);
 };
 
 

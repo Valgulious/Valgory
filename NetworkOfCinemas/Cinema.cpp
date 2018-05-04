@@ -43,24 +43,39 @@ CinemaHall** Cinema::getCinemaHalls()
     return this->cinemaHalls;
 }
 
-void Cinema::addSession(Session * session)
+void Cinema::removeCinemaHall(CinemaHall * cinemaHall)
 {
-    if (!this->sessions) {
-        Session ** mySessions = new Session*[1];
-        mySessions[0] = session;
-        this->sessions = mySessions;
-    } else {
-        Session ** mySessions = new Session*[sizeof(this->sessions) + 1];
-        for (int i = 0; i < sizeof(this->sessions); i++) {
-            mySessions[i] = this->sessions[i];
+    if (!this->cinemaHalls) {
+        CinemaHall ** myCinemaHals = new CinemaHall*[sizeof(this->cinemaHalls) - 1];
+        int j(0);
+        for (int i = 0; i < sizeof(this->cinemaHalls); i++) {
+            if (this->cinemaHalls[i] != cinemaHall) {
+                myCinemaHals[j] = this->cinemaHalls[i];
+                j++;
+            }
         }
-        mySessions[sizeof(this->sessions) + 1] = session;
-        delete [] this->sessions;
-        this->sessions = mySessions;
+        delete [] this->cinemaHalls;
+        this->cinemaHalls = myCinemaHals;
     }
 }
 
 Session** Cinema::getSessions()
 {
     return this->sessions;
+}
+
+void Cinema::removeSession(Session * session)
+{
+    if (!this->sessions) {
+        Session ** mySessions = new Session*[sizeof(this->sessions) - 1];
+        int j(0);
+        for (int i = 0; i < sizeof(this->sessions); i++) {
+            if (this->sessions[i] != session) {
+                mySessions[j] = this->sessions[i];
+                j++;
+            }
+        }
+        delete [] this->sessions;
+        this->sessions = mySessions;
+    }
 }

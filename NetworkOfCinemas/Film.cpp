@@ -43,3 +43,19 @@ Session** Film::getSession()
 {
     return this->sessions;
 }
+
+void Film::removeSession(Session * session)
+{
+    if (!this->sessions) {
+        Session ** mySessions = new Session*[sizeof(this->sessions) - 1];
+        int j(0);
+        for (int i = 0; i < sizeof(this->sessions); i++) {
+            if (this->sessions[i] != session) {
+                mySessions[j] = this->sessions[i];
+                j++;
+            }
+        }
+        delete [] this->sessions;
+        this->sessions = mySessions;
+    }
+}
