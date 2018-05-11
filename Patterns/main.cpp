@@ -3,115 +3,325 @@
 
 using namespace std;
 
-//class Male
-//{
-//public:
-//    virtual void info() = 0;
-//    virtual ~Male() {}
-//};
-//
-//class Female
-//{
-//public:
-//    virtual void info() = 0;
-//    virtual ~Female() {}
-//};
-
-class Gender
+class Caster
 {
 public:
-    virtual void genderInfo() = 0;
-    virtual ~Gender() {}
+    virtual void info() = 0;
+    ~Caster()  = default;
 };
 
-class MalePerson: public Gender
+class Archer
 {
 public:
-    void genderInfo()
+    virtual void info() = 0;
+    ~Archer()  = default;
+};
+
+class Saber
+{
+public:
+    virtual void info() = 0;
+    ~Saber() = default;
+};
+
+class Lancer
+{
+public:
+    virtual void info() = 0;
+    ~Lancer()  = default;
+};
+
+class Berserk
+{
+public:
+    virtual void info() = 0;
+    ~Berserk() = default;
+};
+
+class Assassin
+{
+public:
+    virtual void info() = 0;
+    ~Assassin() = default;
+};
+
+class Rider
+{
+public:
+    virtual void info() = 0;
+    ~Rider() = default;
+};
+
+class RedCaster : public Caster
+{
+public:
+    void info() override
     {
-        cout << "Gender - Male" << endl;
-    }
-    ~MalePerson() {}
-};
-
-class FemalePerson: public Gender
-{
-public:
-    void genderInfo()
-    {
-        cout << "Gender - Female" << endl;
-    }
-    ~FemalePerson() {}
-};
-
-class PersonFactory {
-public:
-    virtual MalePerson* createMalePerson() = 0;
-    virtual FemalePerson* createFemalePerson() = 0;
-};
-
-class MalePersonFactory : public PersonFactory
-{
-public:
-    MalePerson* createMalePerson()
-    {
-        return new MalePerson;
-    }
-};
-
-class FemalePersonFactory : public PersonFactory
-{
-public:
-    FemalePerson* createFemalePerson()
-    {
-        return new FemalePerson;
+        cout << "Caster - Shakespeare" << endl;
     }
 };
 
-
-class Race
+class RedArcher : public Archer
 {
 public:
-    vector<MalePerson*> malePersons;
-    vector<FemalePerson*> femalePersons;
+    void info() override
+    {
+        cout << "Archer - Atalanta" << endl;
+    }
+};
+
+class RedSaber : public Saber
+{
+public:
+    void info() override
+    {
+        cout << "Saber - Mordred" << endl;
+    }
+};
+
+class RedLancer : public Lancer
+{
+public:
+    void info() override
+    {
+        cout << "Lancer - Karna" << endl;
+    }
+};
+
+class RedBerserk : public Berserk
+{
+public:
+    void info() override
+    {
+        cout << "Berserk - Spartacus" << endl;
+    }
+};
+
+class RedAssassin : public Assassin
+{
+public:
+    void info() override
+    {
+        cout << "Assassin - Semiramis" << endl;
+    }
+};
+
+class RedRider : public Rider
+{
+public:
+    void info() override
+    {
+        cout << "Rider - Achilles" << endl;
+    }
+};
+
+class BlackCaster : public Caster
+{
+public:
+    void info() override
+    {
+        cout << "Caster - Shlomo ibn Gebirol" << endl;
+    }
+};
+
+class BlackArcher : public Archer
+{
+public:
+    void info() override
+    {
+        cout << "Archer - Chiron" << endl;
+    }
+};
+
+class BlackSaber : public Saber
+{
+public:
+    void info() override
+    {
+        cout << "Saber - Siegfried" << endl;
+    }
+};
+
+class BlackLancer : public Lancer
+{
+public:
+    void info() override
+    {
+        cout << "Lancer - Vlad III Tepesh" << endl;
+    }
+};
+
+class BlackBerserk : public Berserk
+{
+public:
+    void info() override
+    {
+        cout << "Berserk - Frankenstein" << endl;
+    }
+};
+
+class BlackAssassin : public Assassin
+{
+public:
+    void info() override
+    {
+        cout << "Assassin - Jack the Ripper" << endl;
+    }
+};
+
+class BlackRider : public Rider
+{
+public:
+    void info() override
+    {
+        cout << "Rider - Astolph" << endl;
+    }
+};
+
+class FamiliarsFactory
+{
+public:
+    virtual Caster * createCaster() = 0;
+    virtual Archer * createArcher() = 0;
+    virtual Saber * createSaber() = 0;
+    virtual Lancer * createLancer() = 0;
+    virtual Berserk * createBerserk() = 0;
+    virtual Assassin * createAssassin() = 0;
+    virtual  Rider * createRider() = 0;
+    virtual ~FamiliarsFactory() = default;
+};
+
+class RedFamiliarsFactory : public FamiliarsFactory
+{
+public:
+    Caster * createCaster() override
+    {
+        return new RedCaster;
+    }
+    Archer * createArcher() override
+    {
+        return new RedArcher;
+    }
+    Saber * createSaber() override
+    {
+        return new RedSaber;
+    }
+    Lancer * createLancer() override
+    {
+        return new RedLancer;
+    }
+    Berserk * createBerserk() override
+    {
+        return new RedBerserk;
+    }
+    Assassin * createAssassin() override
+    {
+        return  new RedAssassin;
+    }
+    Rider * createRider() override
+    {
+        return new RedRider;
+    }
+};
+
+class BlackFamiliarsFactory : public FamiliarsFactory
+{
+public:
+    Caster * createCaster() override
+    {
+        return new BlackCaster;
+    }
+    Archer * createArcher() override
+    {
+        return new BlackArcher;
+    }
+    Saber * createSaber() override
+    {
+        return new BlackSaber;
+    }
+    Lancer * createLancer() override
+    {
+        return new BlackLancer;
+    }
+    Berserk * createBerserk() override
+    {
+        return new BlackBerserk;
+    }
+    Assassin * createAssassin() override
+    {
+        return  new BlackAssassin;
+    }
+    Rider * createRider() override
+    {
+        return new BlackRider;
+    }
+};
+
+class Familiars
+{
+public:
+    Caster * caster;
+    Archer * archer;
+    Saber * saber;
+    Lancer * lancer;
+    Berserk * berserker;
+    Assassin * assassin;
+    Rider * rider;
 
     void info()
     {
-        for (int i = 0; i < malePersons.size(); i++) malePersons[i]->genderInfo();
-        for (int i = 0; i < femalePersons.size(); i++) femalePersons[i]->genderInfo();
+        caster->info();
+        archer->info();
+        saber->info();
+        lancer->info();
+        berserker->info();
+        assassin->info();
+        rider->info();
     }
 
-    ~Race()
+    ~Familiars()
     {
-        for (int i = 0; i < malePersons.size(); i++) delete malePersons[i];
-        for (int i = 0; i < femalePersons.size(); i++) delete femalePersons[i];
+        delete caster;
+        delete archer;
+        delete saber;
+        delete lancer;
+        delete berserker;
+        delete assassin;
+        delete rider;
     }
 };
 
-class Game
+class WarForTheHolyGrail
 {
 public:
-    Race * createRace(PersonFactory& factory)
+    Familiars * createFamiliars(FamiliarsFactory& factory)
     {
-        Race * race = new Race;
-        race->malePersons.push_back(factory.createMalePerson());
-        race->femalePersons.push_back((factory.createFemalePerson()));
-        return race;
+        auto * familiars = new Familiars;
+        familiars->caster = factory.createCaster();
+        familiars->archer = factory.createArcher();
+        familiars->saber = factory.createSaber();
+        familiars->lancer = factory.createLancer();
+        familiars->berserker = factory.createBerserk();
+        familiars->assassin = factory.createAssassin();
+        familiars->rider = factory.createRider();
+        return familiars;
     }
 };
 
 int main() {
 //    MalePerson* malePerson = new MalePerson();
 //    malePerson->genderInfo();
-    Game game;
-    MalePersonFactory mFactory;
-    FemalePersonFactory fmFactory;
-//    PersonFactory pFactrory;
+    WarForTheHolyGrail fate;
+    RedFamiliarsFactory redFactory;
+    BlackFamiliarsFactory blackFactory;
 
-    Race * race1 = game.createRace(mFactory);
-    Race * race2 = game.createRace(fmFactory);
-    race1->info();
-    race2->info();
+    Familiars * redFamiliars = fate.createFamiliars(redFactory);
+    Familiars * blackFamiliars = fate.createFamiliars(blackFactory);
+
+    cout << "Red familiars:" << endl;
+    redFamiliars->info();
+    cout << endl << "Black familiars:" << endl;
+    blackFamiliars->info();
 
     return 0;
 }
