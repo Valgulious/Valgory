@@ -40,7 +40,7 @@ public:
         if (j)
             for (int i = 0; i < j; i++)
                 s.erase(s.find(' '), 1);
-        cout << "F1: " << "s = '" << s << "'" << endl;
+        cout << "F1: " << "s = " << s << endl;
         if (next)
             Base::filter(s);
     }
@@ -58,7 +58,7 @@ public:
         if (j)
             for (int i = 0; i < j; i++)
                 s.replace(s.find('-'), 1, "777");
-        cout << "F1: " << "s = '" << s << "'" << endl;
+        cout << "F2: " << "s = " << s << endl;
         if (next)
             Base::filter(s);
     }
@@ -69,7 +69,30 @@ class Filter3: public Base
 public:
     void filter(string s) override
     {
-        cout << "F3: " << s << endl;
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == '(')
+                for (int j = i+1; j < s.size(); j++)
+                    if (s[j] == ')') {
+                        s.erase(s.find('('), 1);
+                        i--;
+                        s.erase(s.find(')'), 1);
+                    }
+            if (s[i] == '{')
+                for (int j = i+1; j < s.size(); j++)
+                    if (s[j] == '}') {
+                        s.erase(s.find('{'), 1);
+                        i--;
+                        s.erase(s.find('}'), 1);
+                    }
+            if (s[i] == '[')
+                for (int j = i+1; j < s.size(); j++)
+                    if (s[j] == ']') {
+                        s.erase(s.find('['), 1);
+                        i--;
+                        s.erase(s.find(']'), 1);
+                    }
+        }
+        cout << "F3: " << "s = " << s << endl;
         if (next)
             Base::filter(s);
     }
@@ -80,7 +103,12 @@ class Filter4: public Base
 public:
     void filter(string s) override
     {
-        cout << "F4: " << s << endl;
+        for (int i = 0; i < s.size(); i++)
+            if (int(s[i]) >= 65 && int(s[i]) <= 90)
+                s[i] = char(int(s[i]) + 32);
+            else if (int(s[i]) >= 97 && int(s[i]) <= 122)
+                s[i] = char(int(s[i]) - 32);
+        cout << "F4: " << "s = " << s << endl;
         if (next)
             Base::filter(s);
     }
@@ -93,21 +121,14 @@ int main() {
     Filter3 thr;
     Filter4 four;
 
-    string s = "   _12 -__sdgjvlv -[()yufjg}{[123]";
+    string s = "   _12 -__sdgjvlv --[()yufjg}{[123]";
     root.add(&two);
     root.add(&thr);
     root.add(&four);
 
+    cout << "s = " << s << endl;
     root.filter(s);
     cout << endl;
-
-//    string s1 = "hel lo";
-//
-//    s1.replace(s1.find(' '), 1, "777");
-//
-//    for (int i = 0; i < s1.size(); i++) {
-//        cout << s1[i] << endl;
-//    }
 
     return 0;
 }
