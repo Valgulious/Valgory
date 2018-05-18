@@ -57,7 +57,7 @@ class RedCaster : public Caster
 public:
     void info() override
     {
-        cout << "Caster - Shakespeare" << endl;
+        cout << "Red Caster" << endl;
     }
 };
 
@@ -66,7 +66,7 @@ class RedArcher : public Archer
 public:
     void info() override
     {
-        cout << "Archer - Atalanta" << endl;
+        cout << "Red Archer" << endl;
     }
 };
 
@@ -75,7 +75,7 @@ class RedSaber : public Saber
 public:
     void info() override
     {
-        cout << "Saber - Mordred" << endl;
+        cout << "Red Saber" << endl;
     }
 };
 
@@ -84,7 +84,7 @@ class RedLancer : public Lancer
 public:
     void info() override
     {
-        cout << "Lancer - Karna" << endl;
+        cout << "Red Lancer" << endl;
     }
 };
 
@@ -93,7 +93,7 @@ class RedBerserk : public Berserk
 public:
     void info() override
     {
-        cout << "Berserk - Spartacus" << endl;
+        cout << "Red Berserk" << endl;
     }
 };
 
@@ -102,7 +102,7 @@ class RedAssassin : public Assassin
 public:
     void info() override
     {
-        cout << "Assassin - Semiramis" << endl;
+        cout << "Red Assassin" << endl;
     }
 };
 
@@ -111,7 +111,7 @@ class RedRider : public Rider
 public:
     void info() override
     {
-        cout << "Rider - Achilles" << endl;
+        cout << "Red Rider" << endl;
     }
 };
 
@@ -120,7 +120,7 @@ class BlackCaster : public Caster
 public:
     void info() override
     {
-        cout << "Caster - Shlomo ibn Gebirol" << endl;
+        cout << "Black Caster" << endl;
     }
 };
 
@@ -129,7 +129,7 @@ class BlackArcher : public Archer
 public:
     void info() override
     {
-        cout << "Archer - Chiron" << endl;
+        cout << "Black Archer" << endl;
     }
 };
 
@@ -138,7 +138,7 @@ class BlackSaber : public Saber
 public:
     void info() override
     {
-        cout << "Saber - Siegfried" << endl;
+        cout << "Black Saber" << endl;
     }
 };
 
@@ -147,7 +147,7 @@ class BlackLancer : public Lancer
 public:
     void info() override
     {
-        cout << "Lancer - Vlad III Tepesh" << endl;
+        cout << "Black Lancer" << endl;
     }
 };
 
@@ -156,7 +156,7 @@ class BlackBerserk : public Berserk
 public:
     void info() override
     {
-        cout << "Berserk - Frankenstein" << endl;
+        cout << "Black Berserk" << endl;
     }
 };
 
@@ -165,7 +165,7 @@ class BlackAssassin : public Assassin
 public:
     void info() override
     {
-        cout << "Assassin - Jack the Ripper" << endl;
+        cout << "Black Assassin" << endl;
     }
 };
 
@@ -174,7 +174,7 @@ class BlackRider : public Rider
 public:
     void info() override
     {
-        cout << "Rider - Astolph" << endl;
+        cout << "Black Rider" << endl;
     }
 };
 
