@@ -7,15 +7,16 @@ using namespace std;
 
 class SessionSerial {
 
-public:
-
-    Date dateOfBegining;
+protected:
+    Date dateOfBeginning;
     Date dateOfEnd;
     int serialNumber;
 
+public:
     SessionSerial(Date, Date, int);
-    void setDateOfBeguning(Date);
-    Date getDateOfBeguning();
+    ~SessionSerial();
+    void setDateOfBeginning(Date);
+    Date getDateOfBeginning();
     void setDateOfEnd(Date);
     Date getDateOfEnd();
     void setSerialNumber(int);

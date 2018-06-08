@@ -10,20 +10,21 @@ using namespace std;
 
 class Session {
 
-public:
-
-    Film film;
+protected:
+    Film * film;
     SessionSerial sessionSerial;
-    CinemaHall cinemaHall;
+    CinemaHall * cinemaHall;
     Date date;
 
-    Session(SessionSerial, Date, CinemaHall, Film);
+public:
+    Session(SessionSerial, Date, CinemaHall*, Film*);
+    ~Session();
     void setSessionSerial(SessionSerial);
     SessionSerial getSessionSerial();
-    void setFilm(Film);
-    Film getFilm();
-    void setCinemaHall(CinemaHall);
-    CinemaHall getCinemaHall();
+    void setFilm(Film*);
+    Film * getFilm();
+    void setCinemaHall(CinemaHall*);
+    CinemaHall * getCinemaHall();
     void setDate(Date);
     Date getDate();
 };

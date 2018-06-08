@@ -1,8 +1,15 @@
 #include "Film.h"
 
-Film::Film(string s, int d, Session ss) {
-    name = s;
-    duration = d;
+Film::Film(string name, int duration, Session * session) {
+    setName(name);
+    setDuration(duration);
+    addSession(session);
+}
+
+Film::~Film() {
+    delete name;
+    delete duration;
+    delete sessions;
 }
 
 void Film::setName(string newName) {
@@ -22,18 +29,18 @@ int Film::getDuration()
     return duration;
 }
 
-void Film::addSession(Session * session)
+void Film::addSession(Session * newSession)
 {
     if (!this->sessions) {
         Session ** mySessions = new Session*[1];
-        mySessions[0] = session;
+        mySessions[0] = newSession;
         this->sessions = mySessions;
     } else {
         Session ** mySessions = new Session*[sizeof(this->sessions) + 1];
         for (int i = 0; i < sizeof(this->sessions); i++) {
             mySessions[i] = this->sessions[i];
         }
-        mySessions[sizeof(this->sessions) + 1] = session;
+        mySessions[sizeof(this->sessions) + 1] = newSession;
         delete [] this->sessions;
         this->sessions = mySessions;
     }

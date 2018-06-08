@@ -1,18 +1,26 @@
 #include "Seat.h"
 
-Seat::Seat(string s, int c, int l, int n, CinemaHall ch) {
-    status = s;
-    coast = c;
-    line = l;
-    number = n;
-    cinemaHall = ch;
+Seat::Seat(bool status, int coast, int line, int number, CinemaHall * cinemaHall) {
+    setStatus(status);
+    setCoast(coast);
+    setLine(line);
+    setNumber(number);
+    setCinemaHall(cinemaHall);
 }
 
-void Seat::setStatus(string newStatus) {
+Seat::~Seat() {
+    delete status;
+    delete coast;
+    delete line;
+    delete number;
+    delete cinemaHall;
+}
+
+void Seat::setStatus(bool newStatus) {
     status = newStatus;
 }
 
-string Seat::getStatus() {
+bool Seat::getStatus() {
     return status;
 }
 
@@ -24,11 +32,11 @@ int Seat::getCoast() {
     return coast;
 }
 
-void Seat::setCinemaHall(CinemaHall newCinemaHall) {
+void Seat::setCinemaHall(CinemaHall * newCinemaHall) {
     cinemaHall = newCinemaHall;
 }
 
-CinemaHall Seat::getCinemaHall() {
+CinemaHall * Seat::getCinemaHall() {
     return cinemaHall;
 }
 

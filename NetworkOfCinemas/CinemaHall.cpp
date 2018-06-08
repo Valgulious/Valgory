@@ -1,9 +1,22 @@
 #include "CinemaHall.h"
 
-CinemaHall::CinemaHall(string s, bool is3d, Cinema c) {
-    name = s;
-    is3D = is3d;
-    cinema = c;
+CinemaHall::CinemaHall(string name, bool is3d, Cinema * newCinema) {
+    setName(name);
+    set3D(is3d);
+    setCinema(newCinema);
+    for (int i = 1; i <= 15; i++) {
+        for (int j = 1; j <= 10; j++){
+            Seat seat(0, 150, i, j, this);
+            addSeats(&seat);
+        }
+    }
+}
+
+CinemaHall::~CinemaHall() {
+    delete name;
+    delete seats;
+    delete cinema;
+    delete is3D;
 }
 
 void CinemaHall::setName(string newName) {
@@ -22,11 +35,11 @@ bool CinemaHall::get3D() {
     return is3D;
 }
 
-void CinemaHall::setCinema(Cinema newCinema) {
+void CinemaHall::setCinema(Cinema * newCinema) {
     cinema = newCinema;
 }
 
-Cinema CinemaHall::getCinema() {
+Cinema * CinemaHall::getCinema() {
     return cinema;
 }
 

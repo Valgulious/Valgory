@@ -1,11 +1,18 @@
 #include "Session.h"
 
 
-Session::Session(SessionSerial ss, Date d, CinemaHall ch, Film f) {
-    sessionSerial = ss;
-    date = d;
-    cinemaHall = ch;
-    film = f;
+Session::Session(SessionSerial sessionSerial, Date newDate, CinemaHall * cinemaHall, Film * film) {
+    setSessionSerial(sessionSerial);
+    setDate(date);
+    setCinemaHall(cinemaHall);
+    setFilm(film);
+}
+
+Session::~Session() {
+    delete sessionSerial;
+    delete date;
+    delete cinemaHall;
+    delete film;
 }
 
 void Session::setSessionSerial(SessionSerial newSessionSerial) {
@@ -16,19 +23,19 @@ SessionSerial Session::getSessionSerial() {
     return sessionSerial;
 }
 
-void Session::setFilm(Film newFilm) {
+void Session::setFilm(Film * newFilm) {
     film = newFilm;
 }
 
-Film Session::getFilm() {
+Film * Session::getFilm() {
     return film;
 }
 
-void Session::setCinemaHall(CinemaHall newCinemaHall) {
+void Session::setCinemaHall(CinemaHall * newCinemaHall) {
     cinemaHall = newCinemaHall;
 }
 
-CinemaHall Session::getCinemaHall() {
+CinemaHall * Session::getCinemaHall() {
     return cinemaHall;
 }
 

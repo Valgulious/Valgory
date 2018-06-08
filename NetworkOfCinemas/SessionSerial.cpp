@@ -1,16 +1,22 @@
 #include "SessionSerial.h"
 
-SessionSerial::SessionSerial(Date dob, Date doe, int sn) {
-    dateOfBegining = dob;
-    dateOfEnd = doe;
-    serialNumber = sn;
+SessionSerial::SessionSerial(Date dateOfBeginning, Date dateOfEnd, int serialNumber) {
+    setDateOfBeginning(dateOfBeginning);
+    setDateOfEnd(dateOfEnd);
+    setSerialNumber(serialNumber);
 }
 
-void SessionSerial::setDateOfBeguning(Date newDateOfBegining) {
+SessionSerial::~SessionSerial() {
+    delete dateOfEnd;
+    delete dateOfBeginning;
+    delete serialNumber;
+}
+
+void SessionSerial::setDateOfBeginning(Date newDateOfBeginning) {
     dateOfBegining = newDateOfBegining;
 }
 
-Date SessionSerial::getDateOfBeguning() {
+Date SessionSerial::getDateOfBeginning() {
     return dateOfBegining;
 }
 

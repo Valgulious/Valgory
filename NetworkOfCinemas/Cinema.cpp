@@ -1,8 +1,15 @@
 #include "Cinema.h"
 
-Cinema::Cinema(string s, NetworkOfCinemas nc) {
-    networkOfCinemas = nc;
-    name = s;
+Cinema::Cinema(string name, NetworkOfCinemas * networkOfCinemas) {
+    setNetworkOfCinemas(networkOfCinemas);
+    setName(name);
+}
+
+Cinema::~Cinema(){
+    delete name;
+    delete networkOfCinemas;
+    delete [] cinemaHalls;
+    delete [] sessions;
 }
 
 void Cinema::setName(string newName) {
@@ -13,26 +20,26 @@ string Cinema::getName() {
     return name;
 }
 
-void Cinema::setNetworkOfCinemas(NetworkOfCinemas newNetworkOfCinema) {
+void Cinema::setNetworkOfCinemas(NetworkOfCinemas * newNetworkOfCinema) {
     networkOfCinemas = newNetworkOfCinema;
 }
 
-NetworkOfCinemas Cinema::getNetworkOfCinemas() {
+NetworkOfCinemas * Cinema::getNetworkOfCinemas() {
     return networkOfCinemas;
 }
 
-void Cinema::addCinemaHall(CinemaHall* cinemaHall)
+void Cinema::addCinemaHall(CinemaHall* newCinemaHall)
 {
     if (!this->cinemaHalls) {
         CinemaHall ** myCinemaHalls = new CinemaHall*[1];
-        myCinemaHalls[0] = cinemaHall;
+        myCinemaHalls[0] = newCinemaHall;
         this->cinemaHalls = myCinemaHalls;
     } else {
         CinemaHall ** myCinemaHalls = new CinemaHall*[sizeof(this->cinemaHalls) + 1];
         for (int i = 0; i < sizeof(this->cinemaHalls); i++) {
             myCinemaHalls[i] = this->cinemaHalls[i];
         }
-        myCinemaHalls[sizeof(this->cinemaHalls) + 1] = cinemaHall;
+        myCinemaHalls[sizeof(this->cinemaHalls) + 1] = newCinemaHall;
         delete [] this->cinemaHalls;
         this->cinemaHalls = myCinemaHalls;
     }

@@ -9,17 +9,19 @@ using namespace std;
 
 class NetworkOfCinemas {
 
-public:
-
+protected:
     string name;
     Cinema ** cinemas = nullptr;
     //Cinema cinemas [];
 
-    NetworkOfCinemas(string);
-    void setName(string);
-    string getName();
+public:
+    NetworkOfCinemas() = default;
+    NetworkOfCinemas(string name = "NetworkOfCinemas");
+    virtual ~NetworkOfCinemas();
+    virtual void setName(string);
+    virtual string getName();
     void addCinema(Cinema *);
-    void removeCinema(Cinema);
+    void removeCinema(Cinema *);
     Cinema ** getCinemas();
 };
 

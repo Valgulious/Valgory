@@ -8,20 +8,21 @@ using namespace std;
 
 class Seat {
 
-public:
-
-    string status;
+protected:
+    bool status;
     int coast;
-    CinemaHall cinemaHall;
+    CinemaHall * cinemaHall;
     int line, number;
 
-    Seat(string, int, int, int, CinemaHall);
-    void setStatus(string);
-    string getStatus();
+public:
+    Seat(bool, int, int, int, CinemaHall*);
+    ~Seat();
+    void setStatus(bool);
+    bool getStatus();
     void setCoast(int);
     int getCoast();
-    void setCinemaHall(CinemaHall);
-    CinemaHall getCinemaHall();
+    void setCinemaHall(CinemaHall *);
+    CinemaHall * getCinemaHall();
     void setLine(int);
     int getLine();
     void setNumber(int);

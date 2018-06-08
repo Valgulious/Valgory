@@ -8,26 +8,27 @@
 
 using namespace std;
 
-class CinemaHall {
+class CinemaHall: protected Cinema {
 
-public:
-
+protected:
     string name;
 //    Seat seats[];
     Seat ** seats = nullptr;
     bool is3D;
-    Cinema cinema;
+    Cinema * cinema;
 
-    CinemaHall(string, bool, Cinema);
-    void setName(string);
-    string getName();
+public:
+    CinemaHall(string, bool, Cinema*);
+    virtual ~CinemaHall();
+    virtual void setName(string) override ;
+    virtual  string getName() override ;
     Seat ** getSeats();
     void addSeats(Seat*);
     void removeSeat(Seat*);
     void set3D(bool);
     bool get3D();
-    void setCinema(Cinema);
-    Cinema getCinema();
+    void setCinema(Cinema*);
+    Cinema * getCinema();
 };
 
 

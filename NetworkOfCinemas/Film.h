@@ -8,13 +8,15 @@ using namespace std;
 
 class Film {
 
-public:
-
+protected:
     string name;
     int duration;
 //    Session session[];
     Session ** sessions = nullptr;
-    Film(string, int, Session);
+
+public:
+    Film(string, int, Session*);
+    ~Film();
     void setName(string);
     string getName();
     void setDuration(int);

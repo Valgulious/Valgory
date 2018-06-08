@@ -8,28 +8,30 @@
 
 using namespace std;
 
-class Cinema {
+class Cinema: protected NetworkOfCinemas {
 
-public:
-
+protected:
     string name;
 //    CinemaHall cinemaHalls[];
 //    Session sessions[];
     CinemaHall ** cinemaHalls = nullptr;
     Session ** sessions = nullptr;
-    NetworkOfCinemas networkOfCinemas;
+    NetworkOfCinemas * networkOfCinemas;
 
-    Cinema(string, NetworkOfCinemas);
-    void setName(string);
-    string getName();
+public:
+    Cinema() = default;
+    Cinema(string, NetworkOfCinemas*);
+    virtual ~Cinema();
+    virtual void setName(string) override ;
+    virtual string getName() override ;
     void addCinemaHall(CinemaHall*);
     CinemaHall ** getCinemaHalls();
     void removeCinemaHall(CinemaHall*);
     void addSession(Session*);
     Session ** getSessions();
     void removeSession(Session*);
-    void setNetworkOfCinemas(NetworkOfCinemas);
-    NetworkOfCinemas getNetworkOfCinemas();
+    void setNetworkOfCinemas(NetworkOfCinemas*);
+    NetworkOfCinemas * getNetworkOfCinemas();
 };
 
 

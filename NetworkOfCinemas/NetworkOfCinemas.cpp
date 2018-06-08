@@ -2,38 +2,51 @@
 #include <iostream>;
 #include <vector>;
 
-NetworkOfCinemas::NetworkOfCinemas(string s) {
-    name = s;
+NetworkOfCinemas::NetworkOfCinemas(string name) {
+    setName(name);
 }
 
-void NetworkOfCinemas::setName(string newName) {
-    name = newName;
+NetworkOfCinemas::~NetworkOfCinemas(){
+    delete name;
+    delete [] cinemas;
 }
 
 string NetworkOfCinemas::getName() {
-    return name;
+    return this->name;
 }
 
-void NetworkOfCinemas::addCinema(Cinema * cinema)
+void NetworkOfCinemas::addCinema(Cinema * newCinema)
 {
     if (!this->cinemas) {
         Cinema ** myCinemas = new Cinema*[1];
-        myCinemas[0] = cinema;
+
+        myCinemas[0] = newCinema;
         this->cinemas = myCinemas;
     } else {
         Cinema ** myCinemas = new Cinema*[sizeof(this->cinemas) + 1];
         for (int i = 0; i < sizeof(this->cinemas); i++) {
             myCinemas[i] = this->cinemas[i];
         }
-        myCinemas[sizeof(this->cinemas) + 1] = cinema;
+        myCinemas[sizeof(this->cinemas) + 1] = newCinema;
         delete [] this->cinemas;
         this->cinemas = myCinemas;
     }
  }
 
-void NetworkOfCinemas::removeCinema(Cinema)
+void NetworkOfCinemas::removeCinema(Cinema * cinema)
 {
-
+    if (!this->cinemas) {
+        Cinema ** myCinemas = new Cinema*[sizeof(this->cinemas) - 1];
+        int j(0);
+        for (int i = 0; i < sizeof(this->cinemas); i++) {
+            if (this->cinemas[i] != cinema) {
+                myCinemas[j] = this->cinemas[i];
+                j++;
+            }
+        }
+        delete [] this->cinemas;
+        this->cinemas = myCinemas;
+    }
 }
 
 Cinema ** NetworkOfCinemas::getCinemas()
