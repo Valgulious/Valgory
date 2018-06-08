@@ -46,11 +46,11 @@ Cinema * CinemaHall::getCinema() {
 void CinemaHall::addSeats(Seat* newSeat)
 {
     if (!this->seats) {
-        Seat ** mySeats = new Seat*[1];
+        auto ** mySeats = new Seat*[1];
         mySeats[0] = newSeat;
         this->seats = mySeats;
     } else {
-        Seat ** mySeats = new Seat*[sizeof(this->seats) + 1];
+        auto ** mySeats = new Seat*[sizeof(this->seats) + 1];
         for (int i = 0; i < sizeof(this->seats); i++) {
             mySeats[i] = this->seats[i];
         }
@@ -68,7 +68,7 @@ Seat** CinemaHall::getSeats()
 void CinemaHall::removeSeat(Seat * seat)
 {
     if (!this->seats) {
-        Seat ** mySeats = new Seat*[sizeof(this->seats) - 1];
+        auto ** mySeats = new Seat*[sizeof(this->seats) - 1];
         int j(0);
         for (int i = 0; i < sizeof(this->seats); i++) {
             if (this->seats[i] != seat) {
@@ -78,5 +78,42 @@ void CinemaHall::removeSeat(Seat * seat)
         }
         delete [] this->seats;
         this->seats = mySeats;
+    }
+}
+
+void CinemaHall::addSession(Session* newSession)
+{
+    if (!this->sessions) {
+        auto ** mySessions = new Session*[1];
+        mySessions[0] = newSession;
+        this->sessions = mySessions;
+    } else {
+        auto ** mySessions = new Session*[sizeof(this->sessions) + 1];
+        for (int i = 0; i < sizeof(this->sessions); i++) {
+            mySessions[i] = this->sessions[i];
+        }
+        mySessions[sizeof(this->sessions) + 1] = newSession;
+        delete [] this->sessions;
+        this->sessions = mySessions;
+    }
+}
+
+Session** CinemaHall::getSessions()
+{
+    return this->sessions;
+}
+
+void CinemaHall::removeSession(Session * session) {
+    if (!this->sessions) {
+        auto **mySessions = new Session *[sizeof(this->sessions) - 1];
+        int j(0);
+        for (int i = 0; i < sizeof(this->sessions); i++) {
+            if (this->sessions[i] != session) {
+                mySessions[j] = this->sessions[i];
+                j++;
+            }
+        }
+        delete[] this->sessions;
+        this->sessions = mySessions;
     }
 }

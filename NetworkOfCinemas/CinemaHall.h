@@ -14,6 +14,7 @@ protected:
     string name;
 //    Seat seats[];
     Seat ** seats = nullptr;
+    Session ** sessions = nullptr;
     bool is3D;
     Cinema * cinema;
 
@@ -29,6 +30,9 @@ public:
     bool get3D();
     void setCinema(Cinema*);
     Cinema * getCinema();
+    void addSession(Session*);
+    Session ** getSessions();
+    void removeSession(Session*);
 };
 
 

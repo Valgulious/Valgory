@@ -9,7 +9,6 @@ Cinema::~Cinema(){
     delete name;
     delete networkOfCinemas;
     delete [] cinemaHalls;
-    delete [] sessions;
 }
 
 void Cinema::setName(string newName) {
@@ -31,11 +30,11 @@ NetworkOfCinemas * Cinema::getNetworkOfCinemas() {
 void Cinema::addCinemaHall(CinemaHall* newCinemaHall)
 {
     if (!this->cinemaHalls) {
-        CinemaHall ** myCinemaHalls = new CinemaHall*[1];
+        auto ** myCinemaHalls = new CinemaHall*[1];
         myCinemaHalls[0] = newCinemaHall;
         this->cinemaHalls = myCinemaHalls;
     } else {
-        CinemaHall ** myCinemaHalls = new CinemaHall*[sizeof(this->cinemaHalls) + 1];
+        auto ** myCinemaHalls = new CinemaHall*[sizeof(this->cinemaHalls) + 1];
         for (int i = 0; i < sizeof(this->cinemaHalls); i++) {
             myCinemaHalls[i] = this->cinemaHalls[i];
         }
@@ -63,26 +62,5 @@ void Cinema::removeCinemaHall(CinemaHall * cinemaHall)
         }
         delete [] this->cinemaHalls;
         this->cinemaHalls = myCinemaHals;
-    }
-}
-
-Session** Cinema::getSessions()
-{
-    return this->sessions;
-}
-
-void Cinema::removeSession(Session * session)
-{
-    if (!this->sessions) {
-        Session ** mySessions = new Session*[sizeof(this->sessions) - 1];
-        int j(0);
-        for (int i = 0; i < sizeof(this->sessions); i++) {
-            if (this->sessions[i] != session) {
-                mySessions[j] = this->sessions[i];
-                j++;
-            }
-        }
-        delete [] this->sessions;
-        this->sessions = mySessions;
     }
 }

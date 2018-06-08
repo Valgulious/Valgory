@@ -11,6 +11,10 @@ NetworkOfCinemas::~NetworkOfCinemas(){
     delete [] cinemas;
 }
 
+void NetworkOfCinemas::setName(string newName) {
+    name = newName;
+}
+
 string NetworkOfCinemas::getName() {
     return this->name;
 }
@@ -18,12 +22,12 @@ string NetworkOfCinemas::getName() {
 void NetworkOfCinemas::addCinema(Cinema * newCinema)
 {
     if (!this->cinemas) {
-        Cinema ** myCinemas = new Cinema*[1];
+        auto ** myCinemas = new Cinema*[1];
 
         myCinemas[0] = newCinema;
         this->cinemas = myCinemas;
     } else {
-        Cinema ** myCinemas = new Cinema*[sizeof(this->cinemas) + 1];
+        auto ** myCinemas = new Cinema*[sizeof(this->cinemas) + 1];
         for (int i = 0; i < sizeof(this->cinemas); i++) {
             myCinemas[i] = this->cinemas[i];
         }
@@ -36,7 +40,7 @@ void NetworkOfCinemas::addCinema(Cinema * newCinema)
 void NetworkOfCinemas::removeCinema(Cinema * cinema)
 {
     if (!this->cinemas) {
-        Cinema ** myCinemas = new Cinema*[sizeof(this->cinemas) - 1];
+        auto ** myCinemas = new Cinema*[sizeof(this->cinemas) - 1];
         int j(0);
         for (int i = 0; i < sizeof(this->cinemas); i++) {
             if (this->cinemas[i] != cinema) {

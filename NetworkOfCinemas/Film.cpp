@@ -32,11 +32,11 @@ int Film::getDuration()
 void Film::addSession(Session * newSession)
 {
     if (!this->sessions) {
-        Session ** mySessions = new Session*[1];
+        auto ** mySessions = new Session*[1];
         mySessions[0] = newSession;
         this->sessions = mySessions;
     } else {
-        Session ** mySessions = new Session*[sizeof(this->sessions) + 1];
+        auto ** mySessions = new Session*[sizeof(this->sessions) + 1];
         for (int i = 0; i < sizeof(this->sessions); i++) {
             mySessions[i] = this->sessions[i];
         }
@@ -54,7 +54,7 @@ Session** Film::getSession()
 void Film::removeSession(Session * session)
 {
     if (!this->sessions) {
-        Session ** mySessions = new Session*[sizeof(this->sessions) - 1];
+        auto ** mySessions = new Session*[sizeof(this->sessions) - 1];
         int j(0);
         for (int i = 0; i < sizeof(this->sessions); i++) {
             if (this->sessions[i] != session) {

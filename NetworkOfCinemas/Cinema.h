@@ -15,7 +15,6 @@ protected:
 //    CinemaHall cinemaHalls[];
 //    Session sessions[];
     CinemaHall ** cinemaHalls = nullptr;
-    Session ** sessions = nullptr;
     NetworkOfCinemas * networkOfCinemas;
 
 public:
@@ -27,9 +26,6 @@ public:
     void addCinemaHall(CinemaHall*);
     CinemaHall ** getCinemaHalls();
     void removeCinemaHall(CinemaHall*);
-    void addSession(Session*);
-    Session ** getSessions();
-    void removeSession(Session*);
     void setNetworkOfCinemas(NetworkOfCinemas*);
     NetworkOfCinemas * getNetworkOfCinemas();
 };
