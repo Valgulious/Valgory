@@ -76,6 +76,7 @@ public:
                         s.erase(s.find('('), 1);
                         i--;
                         s.erase(s.find(')'), 1);
+                        break;
                     }
             if (s[i] == '{')
                 for (int j = i+1; j < s.size(); j++)
@@ -83,6 +84,7 @@ public:
                         s.erase(s.find('{'), 1);
                         i--;
                         s.erase(s.find('}'), 1);
+                        break;
                     }
             if (s[i] == '[')
                 for (int j = i+1; j < s.size(); j++)
@@ -90,6 +92,7 @@ public:
                         s.erase(s.find('['), 1);
                         i--;
                         s.erase(s.find(']'), 1);
+                        break;
                     }
         }
         cout << "F3: " << "s = " << s << endl;
