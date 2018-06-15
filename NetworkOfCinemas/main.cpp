@@ -1,6 +1,8 @@
 #include <iostream>
+#include "JSon.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    JSon testObject;
+    testObject.pars();
     return 0;
 }

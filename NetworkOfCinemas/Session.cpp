@@ -1,9 +1,9 @@
 #include "Session.h"
 
 
-Session::Session(SessionSerial sessionSerial, Date newDate, CinemaHall * cinemaHall, Film * film) {
+Session::Session(SessionSerial * sessionSerial, string newDate, CinemaHall * cinemaHall, Film * film) {
     setSessionSerial(sessionSerial);
-    setDate(date);
+    setDate(newDate);
     setCinemaHall(cinemaHall);
     setFilm(film);
 }
@@ -15,11 +15,11 @@ Session::~Session() {
     delete film;
 }
 
-void Session::setSessionSerial(SessionSerial newSessionSerial) {
+void Session::setSessionSerial(SessionSerial * newSessionSerial) {
     sessionSerial = newSessionSerial;
 }
 
-SessionSerial Session::getSessionSerial() {
+SessionSerial * Session::getSessionSerial() {
     return sessionSerial;
 }
 
@@ -39,10 +39,10 @@ CinemaHall * Session::getCinemaHall() {
     return cinemaHall;
 }
 
-void Session::setDate(Date newDate) {
+void Session::setDate(string newDate) {
     date = newDate;
 }
 
-Date Session::getDate() {
+string Session::getDate() {
     return date;
 }

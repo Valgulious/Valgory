@@ -1,6 +1,6 @@
 #include "NetworkOfCinemas.h"
-#include <iostream>;
-#include <vector>;
+#include <iostream>
+#include <vector>
 
 NetworkOfCinemas::NetworkOfCinemas(string name) {
     setName(name);
