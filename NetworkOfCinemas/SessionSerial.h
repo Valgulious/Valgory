@@ -8,17 +8,17 @@ using namespace std;
 class SessionSerial {
 
 protected:
-    Date dateOfBeginning;
-    Date dateOfEnd;
+    string dateOfBeginning;
+    string dateOfEnd;
     int serialNumber;
 
 public:
-    SessionSerial(Date, Date, int);
+    SessionSerial(string, string, int);
     ~SessionSerial();
-    void setDateOfBeginning(Date);
-    Date getDateOfBeginning();
-    void setDateOfEnd(Date);
-    Date getDateOfEnd();
+    void setDateOfBeginning(string);
+    string getDateOfBeginning();
+    void setDateOfEnd(string);
+    string getDateOfEnd();
     void setSerialNumber(int);
     int getSerialNumber();
 };

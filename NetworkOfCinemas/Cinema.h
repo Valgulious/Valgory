@@ -8,7 +8,10 @@
 
 using namespace std;
 
-class Cinema: protected NetworkOfCinemas {
+class NetworkOfCinemas;
+class CinemaHall;
+
+class Cinema {
 
 protected:
     string name;
@@ -18,11 +21,10 @@ protected:
     NetworkOfCinemas * networkOfCinemas;
 
 public:
-    Cinema() = default;
     Cinema(string, NetworkOfCinemas*);
-    virtual ~Cinema();
-    virtual void setName(string) override ;
-    virtual string getName() override ;
+    ~Cinema();
+    void setName(string);
+    string getName();
     void addCinemaHall(CinemaHall*);
     CinemaHall ** getCinemaHalls();
     void removeCinemaHall(CinemaHall*);

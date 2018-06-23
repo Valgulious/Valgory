@@ -13,10 +13,10 @@ CinemaHall::CinemaHall(string name, bool is3d, Cinema * newCinema) {
 }
 
 CinemaHall::~CinemaHall() {
-    delete name;
+//    delete name;
     delete seats;
     delete cinema;
-    delete is3D;
+//    delete is3D;
 }
 
 void CinemaHall::setName(string newName) {

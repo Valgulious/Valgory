@@ -1,25 +1,29 @@
 #ifndef NETWORKOFCINEMAS_NETWORKOFCINEMAS_H
 #define NETWORKOFCINEMAS_NETWORKOFCINEMAS_H
+
 #include <iostream>
 #include <vector>
 #include "Cinema.h"
+
+class Cinema;
 
 
 using namespace std;
 
 class NetworkOfCinemas {
 
-protected:
+private:
     string name;
-    Cinema ** cinemas = nullptr;
-    //Cinema cinemas [];
+    Cinema ** cinemas;// = nullptr;
 
 public:
-    NetworkOfCinemas() = default;
-    NetworkOfCinemas(string name = "NetworkOfCinemas");
-    virtual ~NetworkOfCinemas();
-    virtual void setName(string);
-    virtual string getName();
+    NetworkOfCinemas(
+            string name = "NetworkOfCinemas",
+            Cinema ** cinemas = nullptr
+    );
+    ~NetworkOfCinemas();
+    void setName(string);
+    string getName();
     void addCinema(Cinema *);
     void removeCinema(Cinema *);
     Cinema ** getCinemas();

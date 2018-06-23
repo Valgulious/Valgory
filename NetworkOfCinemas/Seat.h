@@ -2,9 +2,13 @@
 #define NETWORKOFCINEMAS_SEAT_H
 
 #include "iostream"
-#include "CinemaHall.h"
+//#include "CinemaHall.h"
+//#include "Session.h"
+//#include "Cinema.h"
 
 using namespace std;
+
+class CinemaHall;
 
 class Seat {
 
@@ -28,4 +32,6 @@ public:
     void setNumber(int);
     int getNumber();
 };
+
+
 #endif //NETWORKOFCINEMAS_SEAT_H

@@ -4,15 +4,18 @@
 #include "iostream"
 #include "Cinema.h"
 #include "Seat.h"
+#include "Session.h"
 
 
 using namespace std;
 
-class CinemaHall: protected Cinema {
+class Session;
+class Cinema;
 
-protected:
+class CinemaHall {
+
+private:
     string name;
-//    Seat seats[];
     Seat ** seats = nullptr;
     Session ** sessions = nullptr;
     bool is3D;
@@ -21,8 +24,8 @@ protected:
 public:
     CinemaHall(string, bool, Cinema*);
     virtual ~CinemaHall();
-    virtual void setName(string) override ;
-    virtual  string getName() override ;
+    void setName(string)  ;
+    string getName()  ;
     Seat ** getSeats();
     void addSeats(Seat*);
     void removeSeat(Seat*);

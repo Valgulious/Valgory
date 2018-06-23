@@ -5,11 +5,11 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES main.cpp
 
+        Cinema.h
+        Cinema.cpp
+
         NetworkOfCinemas.cpp
         NetworkOfCinemas.h
-
-        Cinema.cpp
-        Cinema.h
 
         CinemaHall.cpp
         CinemaHall.h
@@ -24,5 +24,8 @@ set(SOURCE_FILES main.cpp
         Film.h
 
         SessionSerial.cpp
-        SessionSerial.h)
+        SessionSerial.h
+
+        JSon.cpp
+        JSon.h)
 add_executable(NetworkOfCinemas ${SOURCE_FILES})

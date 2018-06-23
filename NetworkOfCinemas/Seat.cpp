@@ -9,11 +9,11 @@ Seat::Seat(bool status, int coast, int line, int number, CinemaHall * cinemaHall
 }
 
 Seat::~Seat() {
-    delete status;
-    delete coast;
-    delete line;
-    delete number;
-    delete cinemaHall;
+//    delete status;
+//    delete coast;
+//    delete line;
+//    delete number;
+//    delete cinemaHall;
 }
 
 void Seat::setStatus(bool newStatus) {

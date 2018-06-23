@@ -1,13 +1,15 @@
 #include "NetworkOfCinemas.h"
-#include <iostream>;
-#include <vector>;
+#include <iostream>
+#include <vector>
+#include "Cinema.h"
 
-NetworkOfCinemas::NetworkOfCinemas(string name) {
+NetworkOfCinemas::NetworkOfCinemas(string name, Cinema ** cinema) {
     setName(name);
+    this->cinemas = nullptr;
 }
 
 NetworkOfCinemas::~NetworkOfCinemas(){
-    delete name;
+//    delete name;
     delete [] cinemas;
 }
 

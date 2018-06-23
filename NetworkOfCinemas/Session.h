@@ -8,25 +8,28 @@
 
 using namespace std;
 
+class CinemaHall;
+class Film;
+
 class Session {
 
 protected:
     Film * film;
-    SessionSerial sessionSerial;
+    SessionSerial * sessionSerial;
     CinemaHall * cinemaHall;
-    Date date;
+    string date;
 
 public:
-    Session(SessionSerial, Date, CinemaHall*, Film*);
+    Session(SessionSerial*, string, CinemaHall*, Film*);
     ~Session();
-    void setSessionSerial(SessionSerial);
-    SessionSerial getSessionSerial();
+    void setSessionSerial(SessionSerial*);
+    SessionSerial * getSessionSerial();
     void setFilm(Film*);
     Film * getFilm();
     void setCinemaHall(CinemaHall*);
     CinemaHall * getCinemaHall();
-    void setDate(Date);
-    Date getDate();
+    void setDate(string);
+    string getDate();
 };
 
 

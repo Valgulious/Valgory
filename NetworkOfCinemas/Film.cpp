@@ -7,8 +7,8 @@ Film::Film(string name, int duration, Session * session) {
 }
 
 Film::~Film() {
-    delete name;
-    delete duration;
+//    delete name;
+//    delete duration;
     delete sessions;
 }
 
