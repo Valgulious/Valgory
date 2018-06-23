@@ -4,9 +4,13 @@
 #include "iostream"
 #include "Cinema.h"
 #include "Seat.h"
+#include "Session.h"
 
 
 using namespace std;
+
+class Session;
+class Cinema;
 
 class CinemaHall {
 

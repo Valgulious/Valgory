@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class Session;
+
 class Film {
 
 protected:

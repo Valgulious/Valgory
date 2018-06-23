@@ -7,9 +7,9 @@ SessionSerial::SessionSerial(string dateOfBeginning, string dateOfEnd, int seria
 }
 
 SessionSerial::~SessionSerial() {
-    delete dateOfEnd;
-    delete dateOfBeginning;
-    delete serialNumber;
+//    delete dateOfEnd;
+//    delete dateOfBeginning;
+//    delete serialNumber;
 }
 
 void SessionSerial::setDateOfBeginning(string newDateOfBeginning) {

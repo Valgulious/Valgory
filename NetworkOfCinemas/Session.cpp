@@ -10,7 +10,7 @@ Session::Session(SessionSerial * sessionSerial, string newDate, CinemaHall * cin
 
 Session::~Session() {
     delete sessionSerial;
-    delete date;
+//    delete date;
     delete cinemaHall;
     delete film;
 }

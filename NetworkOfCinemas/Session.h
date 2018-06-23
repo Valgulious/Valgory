@@ -8,6 +8,9 @@
 
 using namespace std;
 
+class CinemaHall;
+class Film;
+
 class Session {
 
 protected:

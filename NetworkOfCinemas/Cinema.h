@@ -8,6 +8,9 @@
 
 using namespace std;
 
+class NetworkOfCinemas;
+class CinemaHall;
+
 class Cinema {
 
 protected:
