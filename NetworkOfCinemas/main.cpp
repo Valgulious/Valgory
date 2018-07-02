@@ -15,7 +15,13 @@ int main() {
 
     networkOfCinemas.addCinema(&cinema1);
     networkOfCinemas.addCinema(&cinema2);
+    networkOfCinemas.addCinema(&cinema2);
     networkOfCinemas.addCinema(&cinema3);
+
+
+//    networkOfCinemas.addCinema(&cinema1);
+//    networkOfCinemas.addCinema(&cinema2);
+//    networkOfCinemas.addCinema(&cinema3);
 
     CinemaHall cinemaHall1("Корешок", 1, &cinema1);
     CinemaHall cinemaHall2("Листок", 1, &cinema2);
@@ -25,10 +31,10 @@ int main() {
     cinema2.addCinemaHall(&cinemaHall2);
     cinema3.addCinemaHall(&cinemaHall3);
 
-    JSon networkOfCinemas1FSON;
-    networkOfCinemas1FSON.pars(networkOfCinemas);
+    cout << networkOfCinemas.getCinemas()[0]->getCinemaHalls()[0]->getName() << endl;
 
-    cout << networkOfCinemas.cinemas[0]->cinemaHalls[0]->getName() << endl;
+//    JSon networkOfCinemas1FSON;
+//    networkOfCinemas1FSON.pars(networkOfCinemas);
 
     return 0;
 }

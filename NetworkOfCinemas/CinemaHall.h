@@ -16,8 +16,9 @@ class CinemaHall {
 
 private:
     string name;
-    Seat ** seats = nullptr;
-    Session ** sessions = nullptr;
+//    Seat ** seats = nullptr;
+//    Session ** sessions = nullptr;
+    vector<Session> sessions;
     bool is3D;
     Cinema * cinema;
 

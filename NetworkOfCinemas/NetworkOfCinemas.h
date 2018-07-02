@@ -14,19 +14,21 @@ class NetworkOfCinemas {
 
 public:
     string name;
-    Cinema ** cinemas;// = nullptr;
+//    Cinema ** cinemas;// = nullptr;
+    vector<Cinema*> cinemas;
 
 public:
     NetworkOfCinemas(
-            string name = "NetworkOfCinemas",
-            Cinema ** cinemas = nullptr
+            string name = "NetworkOfCinemas"/*,
+            Cinema ** cinemas = nullptr*/
     );
-    ~NetworkOfCinemas();
-    void setName(string);
+    ~NetworkOfCinemas() = default;
+    void setName(string newName);
     string getName();
-    void addCinema(Cinema *);
-    void removeCinema(Cinema *);
-    Cinema ** getCinemas();
+    void addCinema(Cinema * newCinema);
+    vector<Cinema*> getCinemas();
+    void removeCinema(Cinema * cinema);
+
 };
 
 

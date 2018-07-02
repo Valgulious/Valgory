@@ -13,22 +13,24 @@ class CinemaHall;
 
 class Cinema {
 
-public:
+private:
     string name;
-//    CinemaHall cinemaHalls[];
-//    Session sessions[];
-    CinemaHall ** cinemaHalls = nullptr;
+//    CinemaHall ** cinemaHalls = nullptr;
     NetworkOfCinemas * networkOfCinemas;
+    vector<CinemaHall*> cinemaHalls;
 
 public:
-    Cinema(string, NetworkOfCinemas*);
+    Cinema(string name, NetworkOfCinemas * networkOfCinemas);
     ~Cinema();
-    void setName(string);
+    void setName(string name);
     string getName();
-    void addCinemaHall(CinemaHall*);
-    CinemaHall ** getCinemaHalls();
-    void removeCinemaHall(CinemaHall*);
-    void setNetworkOfCinemas(NetworkOfCinemas*);
+//    void addCinemaHall(CinemaHall * newCinemaHall);
+//    CinemaHall ** getCinemaHalls();
+//    void removeCinemaHall(CinemaHall * removeCinemaHall);
+    void addCinemaHall (CinemaHall * newCinemaHall);
+    vector<CinemaHall*> getCinemaHalls();
+    void removeCinemaHall(CinemaHall * removeCinemaHall);
+    void setNetworkOfCinemas(NetworkOfCinemas * newNetworkOfCinemas);
     NetworkOfCinemas * getNetworkOfCinemas();
 };
 

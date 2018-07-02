@@ -14,15 +14,15 @@ void JSon::pars(NetworkOfCinemas networkOfCinemas) {
 //
 //    }
 
-    string nameOfCinema = networkOfCinemas.cinemas[0]->getName();
+//    string nameOfCinema = networkOfCinemas.cinemas[0]->getName();
+//
+//    string nameOfCinemaHall = networkOfCinemas.cinemas[0]->cinemaHalls[0]->getName();
 
-    string nameOfCinemaHall = networkOfCinemas.cinemas[0]->cinemaHalls[0]->getName();
+//    cinemaHall[nameOfCinemaHall];
 
-    cinemaHall[nameOfCinemaHall];
+//    cinema[nameOfCinema] = {{"CinemaHalls", cinemaHall}};
 
-    cinema[nameOfCinema] = {{"CinemaHalls", cinemaHall}};
-
-    networkOfCinemasJSON[networkOfCinemas.getName()] = {{"Cinemas", cinema}};
+//    networkOfCinemasJSON[networkOfCinemas.getName()] = {{"Cinemas", cinema}};
 //    networkOfCinemasJSON["NetworkOfCinemas"].emplace("Cinemas", nameOfCinema);
 
 //    for (int i = 1; i < 3; ++i) {
@@ -30,9 +30,9 @@ void JSon::pars(NetworkOfCinemas networkOfCinemas) {
 //        networkOfCinemasJSON[networkOfCinemas.getName()].emplace("Cinema", nameOfCinema);
 //    }
 
-    cout << networkOfCinemasJSON.dump(4) << endl;
-
-    o << setw(4) << networkOfCinemasJSON << endl;
+//    cout << networkOfCinemasJSON.dump(4) << endl;
+//
+//    o << setw(4) << networkOfCinemasJSON << endl;
 
 //    string nameOfCinema = networkOfCinemas.cinemas[0]->getName();
 

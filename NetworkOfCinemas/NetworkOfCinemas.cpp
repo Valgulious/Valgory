@@ -1,16 +1,10 @@
 #include "NetworkOfCinemas.h"
 #include <iostream>
-#include <vector>
 #include "Cinema.h"
 
-NetworkOfCinemas::NetworkOfCinemas(string name, Cinema ** cinema) {
+NetworkOfCinemas::NetworkOfCinemas(string name/*, Cinema ** cinema*/) {
     setName(name);
-    this->cinemas = nullptr;
-}
-
-NetworkOfCinemas::~NetworkOfCinemas(){
-//    delete name;
-//    delete [] cinemas;
+//    this->cinemas = nullptr;
 }
 
 void NetworkOfCinemas::setName(string newName) {
@@ -21,41 +15,39 @@ string NetworkOfCinemas::getName() {
     return this->name;
 }
 
-void NetworkOfCinemas::addCinema(Cinema * newCinema)
-{
-    if (!this->cinemas) {
-        auto ** myCinemas = new Cinema*[1];
+void NetworkOfCinemas::addCinema(Cinema * newCinema) {
 
-        myCinemas[0] = newCinema;
-        this->cinemas = myCinemas;
+    if (cinemas.empty()) {
+        cinemas.push_back(newCinema);
     } else {
-        auto ** myCinemas = new Cinema*[sizeof(this->cinemas) + 1];
-        for (int i = 0; i < sizeof(this->cinemas); i++) {
-            myCinemas[i] = this->cinemas[i];
-        }
-        myCinemas[sizeof(this->cinemas) + 1] = newCinema;
-        delete [] this->cinemas;
-        this->cinemas = myCinemas;
-    }
-}
-
-void NetworkOfCinemas::removeCinema(Cinema * cinema)
-{
-    if (!this->cinemas) {
-        auto ** myCinemas = new Cinema*[sizeof(this->cinemas) - 1];
-        int j(0);
-        for (int i = 0; i < sizeof(this->cinemas); i++) {
-            if (this->cinemas[i] != cinema) {
-                myCinemas[j] = this->cinemas[i];
-                j++;
+        bool notEqually = true;
+        for (int i = 0; i < cinemas.size(); i++) {
+            if (cinemas[i]->getName() == newCinema->getName()
+                and cinemas[i]->getNetworkOfCinemas() == newCinema->getNetworkOfCinemas()) {
+                notEqually = false;
+                break;
             }
         }
-        delete [] this->cinemas;
-        this->cinemas = myCinemas;
+
+        if (notEqually) cinemas.push_back(newCinema);
     }
+
 }
 
-Cinema ** NetworkOfCinemas::getCinemas()
-{
-    return this->cinemas;
+vector<Cinema*> NetworkOfCinemas::getCinemas() {
+    return cinemas;
+}
+
+void NetworkOfCinemas::removeCinema(Cinema * removeCinema) {
+
+    int i = 0;
+
+    for (auto iterator = cinemas.begin(); i < cinemas.size(); iterator++) {
+        if (cinemas[i]->getName() == removeCinema->getName()
+                and cinemas[i]->getNetworkOfCinemas() == removeCinema->getNetworkOfCinemas()) {
+            cinemas.erase(iterator);
+        }
+        i++;
+    }
+
 }
