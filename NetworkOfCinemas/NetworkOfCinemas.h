@@ -12,7 +12,7 @@ using namespace std;
 
 class NetworkOfCinemas {
 
-private:
+public:
     string name;
     Cinema ** cinemas;// = nullptr;
 

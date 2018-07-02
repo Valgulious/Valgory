@@ -13,7 +13,7 @@ class CinemaHall;
 
 class Cinema {
 
-protected:
+public:
     string name;
 //    CinemaHall cinemaHalls[];
 //    Session sessions[];

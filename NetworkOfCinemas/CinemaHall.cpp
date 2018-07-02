@@ -4,18 +4,18 @@ CinemaHall::CinemaHall(string name, bool is3d, Cinema * newCinema) {
     setName(name);
     set3D(is3d);
     setCinema(newCinema);
-    for (int i = 1; i <= 15; i++) {
-        for (int j = 1; j <= 10; j++){
-            Seat seat(0, 150, i, j, this);
-            addSeats(&seat);
-        }
-    }
+//    for (int i = 1; i <= 15; i++) {
+//        for (int j = 1; j <= 10; j++){
+//            Seat seat(0, 150, i, j, this);
+//            addSeats(&seat);
+//        }
+//    }
 }
 
 CinemaHall::~CinemaHall() {
 //    delete name;
-    delete seats;
-    delete cinema;
+//    delete seats;
+//    delete cinema;
 //    delete is3D;
 }
 
@@ -55,7 +55,7 @@ void CinemaHall::addSeats(Seat* newSeat)
             mySeats[i] = this->seats[i];
         }
         mySeats[sizeof(this->seats) + 1] = newSeat;
-        delete [] this->seats;
+        delete [] seats;
         this->seats = mySeats;
     }
 }

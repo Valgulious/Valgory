@@ -1,27 +1,11 @@
 {
-    "answer": {
-        "everything": 42
-    },
-    "happy": true,
-    "list": [
-        1,
-        0,
-        2
-    ],
-    "list2": [
-        "foo",
-        1,
-        true
-    ],
-    "name": "Niels",
-    "nothing": null,
-    "object": {
-        "currency": "USD",
-        "object2": {
-            "happy": true,
-            "pi": 3.141
-        },
-        "value": 42.99
-    },
-    "pi": 3.141
+    "Лесок": {
+        "Cinemas": {
+            "Калинка": {
+                "CinemaHalls": {
+                    "Корешок": null
+                }
+            }
+        }
+    }
 }

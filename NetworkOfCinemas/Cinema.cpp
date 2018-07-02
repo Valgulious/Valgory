@@ -7,8 +7,8 @@ Cinema::Cinema(string name, NetworkOfCinemas * networkOfCinemas) {
 
 Cinema::~Cinema() {
 //    delete name;
-    delete networkOfCinemas;
-    delete [] cinemaHalls;
+//    delete networkOfCinemas;
+//    delete [] cinemaHalls;
 }
 
 void Cinema::setName(string newName) {

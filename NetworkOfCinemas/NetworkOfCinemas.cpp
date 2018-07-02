@@ -10,7 +10,7 @@ NetworkOfCinemas::NetworkOfCinemas(string name, Cinema ** cinema) {
 
 NetworkOfCinemas::~NetworkOfCinemas(){
 //    delete name;
-    delete [] cinemas;
+//    delete [] cinemas;
 }
 
 void NetworkOfCinemas::setName(string newName) {
@@ -37,7 +37,7 @@ void NetworkOfCinemas::addCinema(Cinema * newCinema)
         delete [] this->cinemas;
         this->cinemas = myCinemas;
     }
- }
+}
 
 void NetworkOfCinemas::removeCinema(Cinema * cinema)
 {
